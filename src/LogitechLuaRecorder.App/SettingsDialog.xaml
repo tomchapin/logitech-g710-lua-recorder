@@ -1,0 +1,42 @@
+<Window x:Class="LogitechLuaRecorder.App.SettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recorder Settings"
+        Height="260"
+        Width="420"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="18" FontWeight="SemiBold">Recorder Settings</TextBlock>
+        <TextBlock Grid.Row="1"
+                   Margin="0,10,0,0"
+                   TextWrapping="Wrap"
+                   Foreground="#FF475569">
+            Choose the global hotkey used to start and stop recording while the app is running.
+        </TextBlock>
+
+        <StackPanel Grid.Row="2" Margin="0,18,0,20">
+            <TextBlock Margin="0,0,0,6" FontWeight="SemiBold">Recording Toggle Hotkey</TextBlock>
+            <ComboBox x:Name="HotkeyComboBox"
+                      Height="32"
+                      Width="180"
+                      HorizontalAlignment="Left"
+                      DisplayMemberPath="DisplayName" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3"
+                    Margin="0,8,0,0"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Width="90" Margin="0,0,8,0" IsDefault="True" Click="Ok_Click">OK</Button>
+            <Button Width="90" IsCancel="True">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
